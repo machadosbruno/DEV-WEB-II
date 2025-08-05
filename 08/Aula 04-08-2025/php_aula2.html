@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+    body {
+        font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+    }
+    pre, source, code {
+        font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgc62cabd">1. Operadores em PHP</a>
+<ul>
+<li><a href="#org2b152a8">1.1. Aritmética em PHP</a></li>
+<li><a href="#orgd3e1374">1.2. Praticando</a></li>
+<li><a href="#org6157912">1.3. error_reporting</a></li>
+<li><a href="#org2eb3404">1.4. Praticando</a></li>
+<li><a href="#org352a762">1.5. Bootstrap</a></li>
+<li><a href="#org34c3e50">1.6. Comparação em PHP</a></li>
+<li><a href="#org4f1aea3">1.7. Exercício</a></li>
+<li><a href="#orgf805b04">1.8. Teste PHP resultado HTML</a></li>
+<li><a href="#org44d4579">1.9. while</a></li>
+<li><a href="#org5485194">1.10. Praticando</a></li>
+<li><a href="#org3d32fbc">1.11. Exercício</a></li>
+<li><a href="#orgd9f0952">1.12. Include</a></li>
+<li><a href="#orge68f800">1.13. Exercício</a></li>
+<li><a href="#orgd78a985">1.14. Envio dos exercícios</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc62cabd" class="outline-2">
+<h2 id="orgc62cabd"><span class="section-number-2">1.</span> Operadores em PHP</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org2b152a8" class="outline-3">
+<h3 id="org2b152a8"><span class="section-number-3">1.1.</span> Aritmética em PHP</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Os operadores <a href="https://www.php.net/manual/en/language.operators.arithmetic.php">aritméticos</a> em PHP são:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operador</th>
+<th scope="col" class="org-left">Nome</th>
+<th scope="col" class="org-left">O que faz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">Adição</td>
+<td class="org-left">Soma: <code>$a + $b</code></td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-left">Subtração</td>
+<td class="org-left">Diferença: <code>$a - $b</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>*</code></td>
+<td class="org-left">Multiplicação</td>
+<td class="org-left">Produto: <code>$a * $b</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>/</code></td>
+<td class="org-left">Divisão</td>
+<td class="org-left">Divide: <code>$a / $b</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>%</code></td>
+<td class="org-left">Módulo</td>
+<td class="org-left">Resto da divisão: <code>$a % $b</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>**</code></td>
+<td class="org-left">Exponenciação</td>
+<td class="org-left">Potência: <code>$a ** $b</code></td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+
+  $x = 2;
+  $y = 5;
+
+  echo "Soma: " . $x + $y;
+
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd3e1374" class="outline-3">
+<h3 id="orgd3e1374"><span class="section-number-3">1.2.</span> Praticando</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+A. Cole o código anterior na parte do código PHP em <a href="https://onecompiler.com/php/">https://onecompiler.com/php/</a> e aperte RUN.
+</p>
+
+<iframe width="950" height="594" src="https://www.youtube.com/embed/l8PQHqRMOVA" title="PHP aula2 exemplo A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>
+B. Mostre o resultado de todas as operações listadas na tabela de operadores do PHP com o código abaixo, substituindo OPERADOR pelo item correto:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+
+  $x = 2;
+  $y = 5;
+
+  echo "Soma: " . $x + $y;
+
+  $x = 3;
+  $y = 1;
+
+  // echo "&lt;br&gt;Subtração: " . $x OPERADOR $y;
+
+  $x = 3;
+  $y = 5;
+
+  // echo "&lt;br&gt;Multiplicação: " . $x OPERADOR $y;
+
+  $x = 9;
+  $y = 2;
+
+  // echo "&lt;br&gt;Divisão: " . $x OPERADOR $y;
+
+  $x = 9;
+  $y = 2;
+
+  // echo "&lt;br&gt;Módulo (resto da divisão): " . $x OPERADOR $y;
+
+  $x = 2;
+  $y = 5;
+
+  // echo "&lt;br&gt;Exponenciação: " . $x OPERADOR $y;
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6157912" class="outline-3">
+<h3 id="org6157912"><span class="section-number-3">1.3.</span> error_reporting</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Podemos definir quais erros serão mostrados pelo interpretador PHP usando a função <a href="https://www.php.net/manual/en/function.error-reporting.php">error_reporting</a>.
+</p>
+
+<p>
+Os parâmetros podem ser valores ou constantes definidas em <a href="https://www.php.net/manual/pt_BR/errorfunc.constants.php">https://www.php.net/manual/pt_BR/errorfunc.constants.php</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+  error_reporting(0);
+
+  $x = 2;
+  $y = 5;
+
+  echo "Divisão: " . $x / $y;
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2eb3404" class="outline-3">
+<h3 id="org2eb3404"><span class="section-number-3">1.4.</span> Praticando</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+C. Acesse a documentação dos <a href="https://www.php.net/manual/pt_BR/language.operators.arithmetic.php">operadores aritméticos em PHP</a> e veja como mostrar também o resultado da divisão inteira na página da prática B.
+</p>
+
+<iframe width="950" height="594" src="https://www.youtube.com/embed/pExRcAaalTw" title="PHP Aula2 exemplo C" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="outline-container-org352a762" class="outline-3">
+<h3 id="org352a762"><span class="section-number-3">1.5.</span> Bootstrap</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Podemos usar PHP em uma página HTML com Bootstrap:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;Bootstrap demo&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;?php
+        echo '&lt;h1&gt;Olá PHP!&lt;/h1&gt;';
+    ?&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<iframe width="950" height="534" src="https://www.youtube.com/embed/NAazEpLNfC4" title="php aula2 exemplo1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+
+<div id="outline-container-org34c3e50" class="outline-3">
+<h3 id="org34c3e50"><span class="section-number-3">1.6.</span> Comparação em PHP</h3>
+<div class="outline-text-3" id="text-1-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operador</th>
+<th scope="col" class="org-left">Nome</th>
+<th scope="col" class="org-left">O que faz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&gt;</td>
+<td class="org-left">Maior que</td>
+<td class="org-left">Verifica se $a é maior que $b: $a &gt; $b</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt;</td>
+<td class="org-left">Menor que</td>
+<td class="org-left">Verifica se $a é menor que $b: $a &gt; $b</td>
+</tr>
+
+<tr>
+<td class="org-left">&gt;=</td>
+<td class="org-left">Maior que ou igual a</td>
+<td class="org-left">Verifica se $a é maior que ou igual a $b: $a &gt;= $b</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt;=</td>
+<td class="org-left">Menor que ou igual a</td>
+<td class="org-left">Verifica se $a é menor que ou igual a $b: $a &lt;= $b</td>
+</tr>
+
+<tr>
+<td class="org-left">==</td>
+<td class="org-left">Igual a</td>
+<td class="org-left">Verifica se $a é igual a $b: $a == $b</td>
+</tr>
+
+<tr>
+<td class="org-left">!=</td>
+<td class="org-left">Diferente</td>
+<td class="org-left">Verifica se $a é diferente de $b: $a != $b</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>&lt;&gt;</code></td>
+<td class="org-left">Diferente</td>
+<td class="org-left">Verifica se $a é diferente de $b: $a &lt;&gt; $b</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>===</code></td>
+<td class="org-left">Idêntico</td>
+<td class="org-left">Verifica se $a é igual e tem o mesmo tipo de $b: $a===$b</td>
+</tr>
+
+<tr>
+<td class="org-left">!==</td>
+<td class="org-left">Não idêntico</td>
+<td class="org-left">Verifica se $a não é idêntico a $b e não tem o mesmo tipo: $a !== $b</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt;=&gt;</td>
+<td class="org-left">Espaçonave</td>
+<td class="org-left">Verifica se $a é menor que $b, se é igual a ou se é maior: $a &lt;=&gt; $b</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org4f1aea3" class="outline-3">
+<h3 id="org4f1aea3"><span class="section-number-3">1.7.</span> Exercício</h3>
+<div class="outline-text-3" id="text-1-7">
+<ol class="org-ol">
+<li value="4">Crie uma página PHP que recebe dois números e mostra todas as informações de comparação da tabela anterior. Arquivo exer4.php. Exemplo:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-php">$x = 22  // Use $_GET['num1']
+$y = 7   // Use $_GET['num2']
+
+if($x &gt; $y) {
+  echo "$x é maior que $y";
+}
+
+if($y &gt; $x) {
+  echo "$y é maior que $x";
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf805b04" class="outline-3">
+<h3 id="orgf805b04"><span class="section-number-3">1.8.</span> Teste PHP resultado HTML</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+O PHP oferece uma sintaxe alternativa para as estruturas de controle:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+if ($x &gt; $y) {
+  echo "&lt;strong&gt;Maior!&lt;/strong&gt;";
+}
+?&gt;
+</pre>
+</div>
+
+<p>
+Pode ser escrita assim:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;?php
+if ($x &gt; $y):
+  echo "&lt;strong&gt;Maior!&lt;/strong&gt;";
+endif;
+?&gt;  
+</pre>
+</div>
+
+<p>
+Ou ainda assim:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;?php if ($x &gt; $y): ?&gt;
+&lt;strong&gt;Maior!&lt;/strong&gt;
+&lt;?php endif; ?&gt;
+</pre>
+</div>
+
+<p>
+Existem <a href="https://www.php.net/manual/pt_BR/control-structures.alternative-syntax.php">sintaxes alternativas</a> para if, while, for, foreach e switch.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org44d4579" class="outline-3">
+<h3 id="org44d4579"><span class="section-number-3">1.9.</span> while</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+A sintaxe:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;?php
+$numero = 1;
+
+while($numero &lt;= 5) {
+  echo $numero++ . "&lt;br&gt;";
+}
+?&gt;
+</pre>
+</div>
+
+<p>
+Pode ser simplificado:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;?php
+$numero = 1;
+while ($numero &lt;= 5):
+    echo $numero++ . "&lt;br&gt;";
+endwhile;
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5485194" class="outline-3">
+<h3 id="org5485194"><span class="section-number-3">1.10.</span> Praticando</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Altere o código abaixo para imprimir todos os quadrados dos número de 1 a 10:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"> &lt;!DOCTYPE html&gt;
+ &lt;html&gt;
+   &lt;head&gt;
+     &lt;title&gt;Quadrados&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+     &lt;table&gt;
+       &lt;tr&gt;
+         &lt;th&gt;Número&lt;/th&gt;
+         &lt;th&gt;Quadrado&lt;/th&gt;
+       &lt;/tr&gt;
+       &lt;?php
+$numero = 2;
+if ($numero &gt; 0):
+    $quadrado = $numero * $numero; ?&gt;
+       &lt;tr&gt;
+         &lt;td&gt;&lt;?= $numero ?&gt;&lt;/td&gt;
+         &lt;td&gt;&lt;?= $quadrado ?&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;?php
+endif;
+?&gt;
+     &lt;/table&gt;
+   &lt;/body&gt;
+ &lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3d32fbc" class="outline-3">
+<h3 id="org3d32fbc"><span class="section-number-3">1.11.</span> Exercício</h3>
+<div class="outline-text-3" id="text-1-11">
+<ol class="org-ol">
+<li value="5">Arquivo exer5.php. Usando a fórmula do <a href="https://brasilescola.uol.com.br/matematica/juros-simples.htm">juros simples e montante</a>, escreva uma página PHP que recebe o capital, a taxa de juro e o tempo. Mostre uma tabela que mostra o montante, o juro e o tempo (de 1 até o tempo determinado), exemplo:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-bash">Capital: 600
+Taxa: 12%
+Tempo: 5
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Tempo</th>
+<th scope="col" class="org-right">Montante</th>
+<th scope="col" class="org-right">Juro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">600</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">672</td>
+<td class="org-right">72</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">744</td>
+<td class="org-right">144</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">816</td>
+<td class="org-right">216</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">888</td>
+<td class="org-right">288</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">960</td>
+<td class="org-right">360</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgd9f0952" class="outline-3">
+<h3 id="orgd9f0952"><span class="section-number-3">1.12.</span> Include</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+Podemos usar include para incluir um código PHP em outra página PHP.
+</p>
+
+<p>
+Exemplo: codigo1.php
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+
+$x = 27;
+
+?&gt;
+</pre>
+</div>
+
+<p>
+Código2.php:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+
+echo $x;
+
+?&gt;
+</pre>
+</div>
+
+<p>
+Se continuar assim, ao executar codigo2.php teremos: Undefined variable: x. Mas se incluirmos codigo1.php em codigo2.php a variável fica definida:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+include('codigo1.php');
+
+echo $x;
+
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge68f800" class="outline-3">
+<h3 id="orge68f800"><span class="section-number-3">1.13.</span> Exercício</h3>
+<div class="outline-text-3" id="text-1-13">
+<ol class="org-ol">
+<li value="6">Crie a página atual.php contendo o código abaixo:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+  $pg_atual = 'produtos';
+?&gt;
+</pre>
+</div>
+
+<ol class="org-ol">
+<li value="7">Crie a página menu.php contendo o código abaixo:</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;nav class="navbar navbar-expand-lg bg-body-tertiary"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Barra&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarSupportedContent"&gt;
+      &lt;ul class="navbar-nav me-auto mb-2 mb-lg-0"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link active" aria-current="page" href="#"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="produtos.php"&gt;Produtos&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</pre>
+</div>
+
+<ol class="org-ol">
+<li value="8">Adicione um item de menu chamado "carrinho" na página menu.php.</li>
+
+<li value="9">Altere a página menu.php para deixar ativa a página de acordo com a variável $pg_atual definida em atual.php.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd78a985" class="outline-3">
+<h3 id="orgd78a985"><span class="section-number-3">1.14.</span> Envio dos exercícios</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+<a href="https://forms.gle/3gn2TtLXGjz4hiPK8">https://forms.gle/3gn2TtLXGjz4hiPK8</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
