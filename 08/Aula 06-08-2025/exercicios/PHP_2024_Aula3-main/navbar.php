@@ -20,6 +20,27 @@
           <a class="nav-link" href="recebe_numeros_soma.php">Soma</a>
         <?php endif; ?>
           
+        <li class="nav-item">
+        <?php if($pg_atual == 'sub'): ?>
+          <a class="nav-link active" aria-current="page" href="#">Subtracão</a>
+        <?php else: ?>
+          <a class="nav-link" href="recebe_numeros_sub.php">Subtracão</a>
+        <?php endif; ?>
+
+        <li class="nav-item">
+        <?php if($pg_atual == 'mult'): ?>
+          <a class="nav-link active" aria-current="page" href="#">Multiplicação</a>
+        <?php else: ?>
+          <a class="nav-link" href="recebe_numeros_mult.php">Multiplicação</a>
+        <?php endif; ?>
+
+        <li class="nav-item">
+        <?php if($pg_atual == 'div'): ?>
+          <a class="nav-link active" aria-current="page" href="#">Divisão</a>
+        <?php else: ?>
+          <a class="nav-link" href="recebe_numeros_div.php">Divisão</a>
+        <?php endif; ?>
+
         </li>
         <li class="nav-item">
         <?php if($pg_atual == 'resultado'): ?>
